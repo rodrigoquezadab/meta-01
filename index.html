@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meta-Group</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Estilos generales para todas las secciones */
+      section {
+        width: 100%;
+        margin: 0;
+        padding: 60px 60px; /* puedes ajustar este padding si quieres más o menos espacio */
+      }
+
+      /* Sección Nosotros */
+      #nosotros {
+        background: linear-gradient(160deg, #5d2ad3 10%, #933f0e 100%);
+        color: #ffffff;
+      }
+
+      /* Sección Servicios */
+      #servicios {
+        background-color: #000000;
+        color: #ffffff;
+      }
+
+      /* Sección Trabajos */
+      #trabajos {
+        background-color: #ea5a41;
+        color: #ffffff;
+      }
+
+      /* Sección Contacto */
+      #contacto {
+        background-color: #ffffff;
+        color: #000000;
+      }
+
+      #contacto a {
+        color: #ea5a41;
+        text-decoration: none;
+      }
+
+      #contacto a:hover {
+        text-decoration: underline;
+      }
+
+      /* Otros estilos */
+      .gallery img {
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      .accordion-button {
+        font-weight: bold;
+      }
+
+      footer img {
+        margin-bottom: 10px;
+      }
+
+      #trabajos iframe {
+        width: 100%;
+        border: none;
+      }
+
+      .modal-img {
+        width: 100%;
+      }
+
+      /* Botón de WhatsApp */
+      .whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .whatsapp-button:hover {
+        background-color: #1ebe5d;
+        text-decoration: none;
+      }
+
+      @media (max-width: 767.98px) {
+        #nosotros img {
+          margin-bottom: 20px; /* puedes ajustar el valor según cuánto espacio quieras */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Meta-Group</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#nosotros">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicios">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#trabajos">Trabajos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="p-5 mt-5 container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img
+            src="./assets/Logo_MetaGroup.png"
+            alt="Logo Meta-Group"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>Somos una agencia de comunicaciones, marketing y diseño.</h2>
+          <p>
+            Con base en Chile y más de 20 años de experiencia en el mercado
+            latinoamericano.
+          </p>
+          <h4>La Agencia</h4>
+          <p>
+            Relaciones públicas, marketing y diseño han sido parte de nuestra
+            propuesta estratégica desde el origen. Esta visión nos ha permitido
+            enfrentar de mejor forma los desafiantes escenarios que viven
+            diversas industrias, logrando innovar y adaptar nuestras capacidades
+            creativas a formatos y modelos que potencian la marca e historia de
+            nuestros clientes. Innovamos y cruzamos las fronteras de la
+            comunicación, acompañando el viaje de nuestros clientes y entregando
+            experiencias memorables para sus estrategias y acciones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="container-fluid p-5">
+      <h2 class="text-center mb-4">Nuestros Servicios</h2>
+      <div class="accordion" id="serviciosAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading1">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse1"
+            >
+              Comunicaciones Corporativas Externas
+            </button>
+          </h2>
+          <div
+            id="collapse1"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#serviciosAccordion"
+          >
+            <div class="accordion-body">
+              Relaciones con la prensa, comunicados, planificación de
+              estrategias comunicacionales, eventos corporativos y conferencias
+              de prensa.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading2">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2"
+            >
+              Comunicaciones Corporativas Internas
+            </button>
+          </h2>
+          <div
+            id="collapse2"
+            class="accordion-collapse collapse"
+            data-bs-parent="#serviciosAccordion"
+          >
+            <div class="accordion-body">
+              Campañas internas, actividades, identidad corporativa,
+              comunicaciones para colaboradores.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading3">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+            >
+              Gestión de Crisis
+            </button>
+          </h2>
+          <div
+            id="collapse3"
+            class="accordion-collapse collapse"
+            data-bs-parent="#serviciosAccordion"
+          >
+            <div class="accordion-body">
+              Auditoría de amenazas, planes de contingencia, evaluación de
+              escenarios y preparación para crisis.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading4">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse4"
+            >
+              Creación de Contenido
+            </button>
+          </h2>
+          <div
+            id="collapse4"
+            class="accordion-collapse collapse"
+            data-bs-parent="#serviciosAccordion"
+          >
+            <div class="accordion-body">
+              Creación de contenido para medios patrocinados, redes sociales,
+              infografías y programas de concientización ejecutiva.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading5">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse5"
+            >
+              Entrenamiento de Medios
+            </button>
+          </h2>
+          <div
+            id="collapse5"
+            class="accordion-collapse collapse"
+            data-bs-parent="#serviciosAccordion"
+          >
+            <div class="accordion-body">
+              Capacitación para voceros en medios, técnicas de narración de
+              historias, mensajes clave.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading6">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse6"
+            >
+              Servicios de Monitoreo y Clipping
+            </button>
+          </h2>
+          <div
+            id="collapse6"
+            class="accordion-collapse collapse"
+            data-bs-parent="#serviciosAccordion"
+          >
+            <div class="accordion-body">
+              Reportes diarios y mensuales, informes especiales frente a
+              contingencias.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading7">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse7"
+            >
+              Eventos Presenciales y en Línea
+            </button>
+          </h2>
+          <div
+            id="collapse7"
+            class="accordion-collapse collapse"
+            data-bs-parent="#serviciosAccordion"
+          >
+            <div class="accordion-body">
+              Propuestas, organización e invitaciones para distintos objetivos.
+              Sorteos y kits de experiencias, actividades virtuales.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading8">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse8"
+            >
+              Gestión de Relaciones con Influencers
+            </button>
+          </h2>
+          <div
+            id="collapse8"
+            class="accordion-collapse collapse"
+            data-bs-parent="#serviciosAccordion"
+          >
+            <div class="accordion-body">
+              Brand awareness, actividades de marca, campañas de marketing
+              dirigidas.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería de Instagram -->
+    <section id="trabajos" class="container-fluid p-5">
+      <h2 class="text-center mb-4">Galería de Trabajos</h2>
+      <div class="row">
+        <div class="col-12">
+          <!-- Aquí insertamos el widget de Instagram -->
+          <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+          <script
+            src="https://static.elfsight.com/platform/platform.js"
+            async
+          ></script>
+          <div
+            class="elfsight-app-c310b1a9-4d25-4d61-a788-592b14d9f6b4"
+            data-elfsight-app-lazy
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="p-5 bg-light">
+      <div class="container-fluid">
+        <h2 class="text-center mb-4">Contacto</h2>
+        <div class="row align-items-center">
+          <!-- Texto -->
+          <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+            <h2>¿Tienes un proyecto en mente?</h2>
+            <p>
+              <i class="fas fa-comments"></i> Contáctanos, nos encantaría saber
+              de ti.
+            </p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Lota #2257 of. 802,
+              Providencia, Santiago, Chile
+            </p>
+            <p><i class="fas fa-phone"></i> +569 25411254</p>
+            <p>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:contacto@meta-group.cl">contacto@meta-group.cl</a>
+            </p>
+          </div>
+
+          <!-- Mapa -->
+          <div class="col-md-6">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.9748131350198!2d-70.60783800000004!3d-33.423901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf6f3c38ccdd%3A0x9e70e79624b7ed7c!2sLota%202257%2C%207510194%20Santiago%2C%20Providencia%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1745729797075!5m2!1ses-419!2scl"
+              width="100%"
+              height="400"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/56948040520" class="whatsapp-button" target="_blank">
+      <i class="fab fa-whatsapp"></i> ¡Escríbenos por WhatsApp!
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white p-4">
+      <div class="container-fluid text-center">
+        <img src="./assets/Logo_MetaGroup.png" alt="Logo" width="100" />
+
+        <div>
+          <a
+            href="https://www.instagram.com/metagroup.cl"
+            class="text-white me-3"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/m3ta-group/"
+            class="text-white me-3"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://www.tiktok.com/@agenciametagroup" class="text-white"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function showModal(src) {
+        document.getElementById("modalImage").src = src;
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
